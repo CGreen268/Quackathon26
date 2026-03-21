@@ -104,7 +104,7 @@ function renderGrid() {
             } else if (cell === 3) {
                 div.classList.add("cell-player");
                 div.textContent = "🚶";
-            } else if (cell === "4") {
+            } else if (cell === 4) {
                 div.classList.add("cell-walked");
             } else if (typeof cell === "string") {
                 div.classList.add(`cell-${cell}`);
