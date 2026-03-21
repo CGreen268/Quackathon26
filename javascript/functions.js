@@ -88,6 +88,7 @@ console.log(layout);
 // Render the grid to the HTML page
 function renderGrid() {
     const container = document.getElementById("grid-container");
+    container.innerHTML = "";
     const cols = layout[0].length;
     container.style.gridTemplateColumns = `repeat(${cols}, 36px)`;
 
@@ -169,7 +170,29 @@ function BFS(grid, target) {
     return { found: false, position: null, path: [], distance: -1 };
 }
 
-console.log(BFS(layout,"S"))
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function showPath(path){
+    for(x = 0; x < path.length-2; x++){
+        row = path[x][0]
+        col = path[x][1]
+        layout[row][col] = "r"
+        
+    
+        row = path[x+1][0]
+        col = path[x+1][1]
+        layout[row][col] = "🚶"
+        await sleep(300)
+        
+        renderGrid()
+    }
+
+}
+
+
+showPath(BFS(layout, "C").path);
 
 
 
