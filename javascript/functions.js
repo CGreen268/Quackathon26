@@ -120,6 +120,26 @@ function renderGrid() {
 
 renderGrid();
 
+// Map each subject option to its grid colour
+const subjectColours = {
+    English:   "#4365e2",
+    Maths:     "#e24343",
+    Computing: "#43b043",
+    Science:   "#e2a843",
+};
+
+function updateDropdownColour() {
+    const select = document.getElementById("subject-select");
+    const colour = subjectColours[select.value];
+    select.style.borderColor = colour;
+    select.style.color = colour;
+    select.style.backgroundImage = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='${encodeURIComponent(colour)}' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`;
+}
+
+// Set colour on page load and whenever the selection changes
+updateDropdownColour();
+document.getElementById("subject-select").addEventListener("change", updateDropdownColour);
+
 function BFS(grid, target) {
 
 
