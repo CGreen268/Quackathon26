@@ -217,12 +217,12 @@ async function showPath(path){
     for(x = 0; x < path.length-2; x++){
         row = path[x][0]
         col = path[x][1]
-        layout[row][col] = "r"
+        layout[row][col] = 4
         
     
         row = path[x+1][0]
         col = path[x+1][1]
-        layout[row][col] = "🚶"
+        layout[row][col] = 3
         await sleep(300)
         
         renderGrid()
@@ -230,7 +230,22 @@ async function showPath(path){
 
 }
 
-showPath(BFS(layout, subjectCodes[selectedSubject]).path);
+function clearPath(previousPath){
+    for(x = 0; x < previousPath.length-1; x++){
+        row = path[x][0]
+        col = path[x][1]
+        layout[row][col] = 0
+    }
+}
+const letterMap = { English: "E", Maths: "M", Computing: "C", Science: "S" };
+
+document.getElementById("path-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const selected = document.getElementById("subject-select").value;
+    const target = letterMap[selected];
+    const result = BFS(layout, target);
+    if (result.found) showPath(result.path);
+});
 
 
 
