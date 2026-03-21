@@ -93,6 +93,7 @@ p {
 .cell-wall    { background-color: #888; }
 .cell-open    { background-color: #f5f0e8; }
 .cell-player  { background-color: #f5f0e8; font-size: 20px; }
+.cell-walked  { background-color: #e13636; }
 .cell-E       { background-color: #4365e2; color: #fff; }
 .cell-M       { background-color: #e24343; color: #fff; }
 .cell-C       { background-color: #43b043; color: #fff; }
