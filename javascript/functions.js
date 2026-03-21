@@ -85,5 +85,37 @@ layout.forEach((row) => {
 });
 console.log(layout);
 
+// Render the grid to the HTML page
+function renderGrid() {
+    const container = document.getElementById("grid-container");
+    const cols = layout[0].length;
+    container.style.gridTemplateColumns = `repeat(${cols}, 36px)`;
+
+    layout.forEach((row) => {
+        row.forEach((cell) => {
+            const div = document.createElement("div");
+            div.classList.add("grid-cell");
+
+            if (cell === 2) {
+                div.classList.add("cell-border");
+            } else if (cell === 1) {
+                div.classList.add("cell-wall");
+            } else if (cell === 3) {
+                div.classList.add("cell-player");
+                div.textContent = "🚶";
+            } else if (typeof cell === "string") {
+                div.classList.add(`cell-${cell}`);
+                div.textContent = cell;
+            } else {
+                div.classList.add("cell-open");
+            }
+
+            container.appendChild(div);
+        });
+    });
+}
+
+renderGrid();
+
 
 
