@@ -225,7 +225,7 @@ async function showPath(path){
         row = path[x+1][0]
         col = path[x+1][1]
         layout[row][col] = 3
-        await sleep(300)
+        await sleep(100)
         
         renderGrid()
     }
@@ -234,19 +234,24 @@ async function showPath(path){
 
 function clearPath(previousPath){
     for(x = 0; x < previousPath.length-1; x++){
-        row = path[x][0]
-        col = path[x][1]
+        row = previousPath[x][0]
+        col = previousPath[x][1]
         layout[row][col] = 0
     }
+    layout[1][9] = 3
 }
 const letterMap = { English: "E", Maths: "M", Computing: "C", Science: "S" };
-
-document.getElementById("path-form").addEventListener("submit", function(e) {
+let previousPath = null;
+document.getElementById("path-form").addEventListener("submit", async function(e) {
     e.preventDefault();
+    if (previousPath != null) {
+        clearPath(previousPath);
+    }
     const selected = document.getElementById("subject-select").value;
     const target = letterMap[selected];
     const result = BFS(layout, target);
-    if (result.found) showPath(result.path);
+    if (result.found) await showPath(result.path);
+    previousPath = result.path;
 });
 
 
