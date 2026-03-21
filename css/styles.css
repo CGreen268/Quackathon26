@@ -1,0 +1,28 @@
+h1 {
+    color: #4365e2;
+    font-family: thisBaxterSansMedium, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+p {
+    font-family: thisBaxterSansMedium, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.navbar-custom {
+    background-color: #fff;
+}
+
+.navbar-custom .navbar-brand {
+    color: #4365e2 !important;
+    font-weight: 600;
+}
+
+.footer {
+    background-color: #4365e2;
+    width: 100%;
+    height: 80px;
+    margin-top: 50px;
+}
