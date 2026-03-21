@@ -129,6 +129,17 @@ const subjectColours = {
     Science:   "#e2a843",
 };
 
+// Map full subject names to their single letter representations
+const subjectCodes = {
+    English: "E",
+    Maths: "M",
+    Computing: "C",
+    Science: "S"
+};
+
+// Variable to store the selected subject
+let selectedSubject = "English"; // Default value
+
 function updateDropdownColour() {
     const select = document.getElementById("subject-select");
     const colour = subjectColours[select.value];
@@ -137,9 +148,17 @@ function updateDropdownColour() {
     select.style.backgroundImage = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='${encodeURIComponent(colour)}' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`;
 }
 
+// Function to update the selected subject variable
+function updateSelectedSubject() {
+    const select = document.getElementById("subject-select");
+    selectedSubject = select.value;
+    console.log("Selected subject:", selectedSubject); // For debugging
+}
+
 // Set colour on page load and whenever the selection changes
 updateDropdownColour();
 document.getElementById("subject-select").addEventListener("change", updateDropdownColour);
+document.getElementById("subject-select").addEventListener("change", updateSelectedSubject);
 
 function BFS(grid, target) {
 
@@ -211,8 +230,7 @@ async function showPath(path){
 
 }
 
-
-showPath(BFS(layout, "C").path);
+showPath(BFS(layout, subjectCodes[selectedSubject]).path);
 
 
 
