@@ -11,6 +11,32 @@ p {
     line-height: 1.6;
 }
 
+#subject-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    color: #4365e2;
+    border: 2px solid #4365e2;
+    border-radius: 6px;
+    padding: 10px 40px 10px 16px;
+    font-family: thisBaxterSansMedium, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234365e2' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#subject-select:hover,
+#subject-select:focus {
+    background-color: #4365e2;
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+}
+
 .navbar-custom {
     background-color: #fff;
 }
