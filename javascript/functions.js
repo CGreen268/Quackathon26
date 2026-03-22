@@ -1,4 +1,4 @@
-// 2 = border, 1 = wall, 0 = open space
+// 3 = little man 2 = border, 1 = wall, 0 = open space
 const layout = [
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
     [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
@@ -55,6 +55,7 @@ const emptySpaceGrid = layout.map((row) =>
 console.log("\nEmpty-space grid (0 = empty, 1 = occupied):");
 console.log(emptySpaceGrid);
 
+// Visualize the layout in the console (debigging purposes)
 console.log("\nVisual layout:");
 layout.forEach((row) => {
     const visualRow = row
@@ -70,6 +71,7 @@ layout.forEach((row) => {
 
 const subjects = ["E", "M", "C", "S", "H", "A", "P"];
 
+// Attempt to place each subject in a random 2x2 block of empty spaces
 subjects.forEach((subject) => {
     let placed = false;
     let attempts = 0;
@@ -99,6 +101,7 @@ subjects.forEach((subject) => {
     }
 });
 
+// Visualize the layout with subjects in the console (debugging purposes)
 console.log("\nLayout with subjects:");
 layout.forEach((row) => {
     const visualRow = row
@@ -250,6 +253,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Function to animate the path on the grid
 async function showPath(path){
     for(x = 0; x < path.length-2; x++){
         row = path[x][0]
@@ -267,6 +271,7 @@ async function showPath(path){
 
 }
 
+// Function to clear the previous path from the grid
 function clearPath(previousPath){
     for(x = 0; x < previousPath.length-1; x++){
         row = previousPath[x][0]
@@ -285,6 +290,8 @@ const letterMap = {
     Art: "A",
     Physics: "P"
 };
+
+// Event listener for form submission to find and show the path to the selected subject
 let previousPath = null;
 document.getElementById("path-form").addEventListener("submit", async function(e) {
     e.preventDefault();
