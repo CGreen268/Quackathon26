@@ -93,8 +93,11 @@ p {
 .cell-wall    { background-color: #888; }
 .cell-open    { background-color: #f5f0e8; }
 .cell-player  { background-color: #f5f0e8; font-size: 20px; }
-.cell-walked  { background-color: #e13636; }
+.cell-walked  { background-color: #f200ff; }
 .cell-E       { background-color: #4365e2; color: #fff; }
 .cell-M       { background-color: #e24343; color: #fff; }
 .cell-C       { background-color: #43b043; color: #fff; }
 .cell-S       { background-color: #e2a843; color: #fff; }
+.cell-H       { background-color: #7a4cc2; color: #fff; }
+.cell-A       { background-color: #d96c2f; color: #fff; }
+.cell-P       { background-color: #2f9ca8; color: #fff; }
