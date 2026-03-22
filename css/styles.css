@@ -55,11 +55,14 @@ p {
 
 .navbar-custom {
     background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .navbar-custom .navbar-brand {
     color: #4365e2 !important;
     font-weight: 600;
+    font-family: 'Lora', serif;
 }
 
 .footer {
