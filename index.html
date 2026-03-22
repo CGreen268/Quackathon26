@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Seat Finder</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#"><img src="uodlogo.png" alt="UOD logo" width="60" height="60"></a>
+        <div class="container">
+            <a class="navbar-brand" href="#">Library Seat Finder</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4 text-center mb-4">Welcome to Library Seat Finder 📚</h1>
+                <p class="lead text-center">Find your team and join their table</p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <p class="lead text-center">Select which subject you and your team are studying:</p>
+                <form id="path-form">
+                    <select id="subject-select">
+                        <option value="English">English</option>
+                        <option value="Science">Science</option>
+                        <option value="Computing">Computing</option>
+                        <option value="Maths">Maths</option>
+                        <option value="History">History</option>
+                        <option value="Art">Art</option>
+                        <option value="Physics">Physics</option>
+                    </select>
+                    <input type="submit" value="Find Path" class="button">
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <div id="grid-container"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="javascript/functions.js"></script>
+</body>
+</html>
