@@ -82,13 +82,13 @@ p {
 }
 
 .grid-cell {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 10px;
     border-radius: 2px;
 }
 
